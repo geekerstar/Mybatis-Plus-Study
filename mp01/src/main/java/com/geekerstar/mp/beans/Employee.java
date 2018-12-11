@@ -1,16 +1,43 @@
 package com.geekerstar.mp.beans;
 
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
+
 /**
  * @author geekerstar
  * @date 2018/12/11
  * description
  */
+
+/**
+ * MybatisPlus会默认使用实体类的类名到数据中找对应的表
+ */
+@TableName(value = "tbl_employee")
 public class Employee {
+    /**
+     * @TableId
+     *      value:指定表中的主键列的列名，如果实体属性名与列名一致，可以省略不指定
+     *      type:指定主键策略
+     */
+//    @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
     private String lastName;
     private String email;
     private Integer gender;
     private Integer age;
+
+    @TableField(exist = false)
+    private Double salary;
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
 
     @Override
     public String toString() {
