@@ -41,6 +41,7 @@
 
 		<!-- 注入全局MP策略配置 -->
 		<property name="globalConfig" ref="globalConfiguration"></property>
+
 	</bean>
 
 	<!-- 定义MybatisPlus的全局策略配置-->
